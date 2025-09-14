@@ -12,6 +12,9 @@ func _process(delta: float) -> void:
 	var right : bool = Input.is_action_pressed("right")
 	var left : bool = Input.is_action_pressed("left")
 	
-	velocity.x += (int(right) - int(left)) * speed
-	velocity.y += (int(down) - int(up)) * speed
-	move_and_slide()
+	var x_dir = (int(right) - int(left)) # outputs 1, 0, or -1 depending on which switches are pressed
+	var y_dir = (int(down) - int(up)) # outputs 1, 0, or -1 depending on which switches are pressed
+	
+	velocity.x += x_dir * speed
+	velocity.y += y_dir * speed
+	move_and_slide() # movement output

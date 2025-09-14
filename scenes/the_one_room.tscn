@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfrxq4katqk6u"]
 
-[ext_resource type="Script" uid="uid://b6fjmt3im3ulj" path="res://player_rpg.gd" id="1_xdgdc"]
+[ext_resource type="Script" uid="uid://b6fjmt3im3ulj" path="res://scripts/player_rpg.gd" id="1_pmgbm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ofcj"]
 size = Vector2(40, 40)
@@ -9,14 +9,21 @@ size = Vector2(40, 40)
 
 [node name="Big Player" type="CharacterBody2D" parent="."]
 collision_mask = 2
-script = ExtResource("1_xdgdc")
+script = ExtResource("1_pmgbm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Big Player"]
 position = Vector2(20, 19)
 shape = SubResource("RectangleShape2D_5ofcj")
 
 [node name="ColorRect" type="ColorRect" parent="Big Player"]
+offset_top = -1.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 39.0
 size_flags_horizontal = 4
 color = Color(0.537064, 0.246159, 0.698413, 1)
+
+[node name="Camera2D" type="Camera2D" parent="Big Player"]
+position = Vector2(20, 16)
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
