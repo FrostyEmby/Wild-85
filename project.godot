@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Small Yet Mighty"
+run/main_scene="uid://bgoo2ek3dom3w"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
