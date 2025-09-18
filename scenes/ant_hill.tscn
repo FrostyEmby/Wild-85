@@ -1,26 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://blgrv1h0d25ss"]
+[gd_scene load_steps=5 format=3 uid="uid://blgrv1h0d25ss"]
 
 [ext_resource type="PackedScene" uid="uid://11hcns3x5mfx" path="res://scenes/small_player.tscn" id="1_xpm4y"]
+[ext_resource type="PackedScene" uid="uid://bq1xc8hflahxf" path="res://scenes/box.tscn" id="2_oqm5y"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xpm4y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oqm5y"]
-size = Vector2(177, 28.5)
+size = Vector2(754.5, 28.5)
 
 [node name="Ant Hill" type="Node2D"]
 
 [node name="Small Player" parent="." instance=ExtResource("1_xpm4y")]
 
 [node name="Platform" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 66
 physics_material_override = SubResource("PhysicsMaterial_xpm4y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
-position = Vector2(24, 65)
+position = Vector2(312.75, 65)
 shape = SubResource("RectangleShape2D_oqm5y")
 
 [node name="ColorRect" type="ColorRect" parent="Platform"]
 offset_left = -66.0
 offset_top = 50.0
-offset_right = 113.0
+offset_right = 690.0
 offset_bottom = 80.0
 color = Color(0.172549, 0, 0, 1)
+
+[node name="Box" parent="." instance=ExtResource("2_oqm5y")]
+position = Vector2(79, -3)
