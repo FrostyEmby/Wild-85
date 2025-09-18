@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgoo2ek3dom3w"]
+[gd_scene load_steps=3 format=3 uid="uid://bgoo2ek3dom3w"]
 
 [ext_resource type="Script" uid="uid://chbmricjttcll" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l6cm7"]
+font_size = 50
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -10,6 +13,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l6cm7")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.1
+offset_left = -64.5
+offset_right = 64.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Small Yet Mighty"
+label_settings = SubResource("LabelSettings_l6cm7")
+horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
